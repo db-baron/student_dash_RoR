@@ -1,0 +1,12 @@
+<h1>Branch: <%= @dojo.branch %></h1>
+<p><strong>Street:</strong> <%= @dojo.street %></p>
+<p><strong>City:</strong> <%= @dojo.city %></p>
+<p><strong>State:</strong> <%= @dojo.state %></p>
+
+<a href="/dojos/<%= @dojo.id %>/edit">Edit</a>
+<br>
+<a href="/dojos/new">Make a New Dojo</a>
+<br>
+<a href="/dojos">Go Back</a>
+<br>
+<%= link_to "link_to Edit", edit_dojo_path(@dojo) %>
