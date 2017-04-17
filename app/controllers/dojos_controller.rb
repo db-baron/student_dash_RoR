@@ -9,6 +9,7 @@ class DojosController < ApplicationController
 
   def show
       @dojo = Dojo.find(params[:id])
+      @students = Student.all
   end
 
   def edit
@@ -16,9 +17,10 @@ class DojosController < ApplicationController
   end
 
   def create
+    render json: params
     #   @dojo = Dojo.create( branch: params[:branch], street: params[:street], city: params[:city], state: params[:state])
-      @dojo = Dojo.create(dojo_params)
-      redirect_to "/dojos", notice: "You successully created a Dojo"
+    #   @dojo = Dojo.create(dojo_params)
+    #   redirect_to "/dojos", notice: "You successully created a Dojo"
   end
 
   def update

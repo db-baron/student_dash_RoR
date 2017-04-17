@@ -1,0 +1,25 @@
+<h1>Student: <%= @student.first_name %> <%= @student.last_name %> of branch <%= @student.branch %></h1>
+<p><strong>Last Name:</strong> <%= @student.last_name %></p>
+<p><strong>Email:</strong> <%= @student.email %></p>
+
+<h3>Cohort</h3>
+<table class="table table-bordered">
+    <thead>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+    </thead>
+    <tbody>
+        <% @cohort.each do |student| %>
+        <tr>
+            <td> <%= student.first_name %> </td>
+            <td> <%= student.last_name %></td>
+            <td> <%= student.email %></td>
+        </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<a href="/<%= @student.id %>/edit">Edit</a>
+<br>
+<a href="/dojos/<%= @student.dojo_id %>">Go Back</a>
